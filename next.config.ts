@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   output: 'export',
 
   // GitHub Pages serves from /repo-name/ subpath
-  basePath: isProd ? '/akkarinca-app' : '',
-  assetPrefix: isProd ? '/akkarinca-app/' : '',
+  basePath: isProd ? '/akkarinca_sandals' : '',
+  assetPrefix: isProd ? '/akkarinca_sandals/' : '',
 
   images: {
     // GitHub Pages has no server — can't optimize at runtime
