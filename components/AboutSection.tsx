@@ -3,6 +3,7 @@
 import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import { useLightbox } from './LightboxContext';
+import { getImagePath } from '@/utils/imagePath';
 
 // About section vine paths
 const aboutVines = [
@@ -163,7 +164,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          onClick={() => openLightbox('/images/ana_menu.png', 'Akkarınca — Ana Model')}
+          onClick={() => openLightbox(getImagePath('/images/ana_menu.png'), 'Akkarınca — Ana Model')}
           style={{ position: 'relative', height: 500, borderRadius: 2, cursor: 'zoom-in' }}
           title="Büyütmek için tıklayın"
         >
@@ -193,7 +194,7 @@ export default function AboutSection() {
               style={{ width: '100%', height: '100%', position: 'relative' }}
             >
               <Image
-                src="/images/ana_menu.png"
+                src={getImagePath('/images/ana_menu.png')}
                 alt="Akkarınca El Yapımı Terlik"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

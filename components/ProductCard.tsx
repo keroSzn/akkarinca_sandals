@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { type Product } from '@/data/products';
 import { useLightbox } from './LightboxContext';
+import { getImagePath } from '@/utils/imagePath';
 
 function VineCorner() {
   return (
@@ -63,7 +64,7 @@ export default function ProductCard({ product, index }: { product: Product; inde
 
         {/* ── IMAGE WRAP ── */}
         <div
-          onClick={() => activeVariant && openLightbox(activeVariant.image, `${product.name} (${activeVariant.color})`)}
+          onClick={() => activeVariant && openLightbox(getImagePath(activeVariant.image), `${product.name} (${activeVariant.color})`)}
           style={{
             width: '100%',
             height: 260,
@@ -85,7 +86,7 @@ export default function ProductCard({ product, index }: { product: Product; inde
               style={{ width: '100%', height: '100%', position: 'relative' }}
             >
               <Image
-                src={activeVariant.image}
+                src={getImagePath(activeVariant.image)}
                 alt={`${product.name} - ${activeVariant.color}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"

@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { getImagePath } from '@/utils/imagePath';
 
 interface LightboxContextType {
   openLightbox: (src: string, alt: string) => void;
@@ -135,7 +136,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                 }}
               >
                 <Image
-                  src={src}
+                  src={getImagePath(src)}
                   alt={alt}
                   fill
                   sizes="90vw"
